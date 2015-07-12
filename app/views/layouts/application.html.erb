@@ -6,12 +6,29 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<body> 
+	<div class="main_header clearfix">
+		<div class="wrapper">
+			<div id="logo"> <p> <%= link_to "Madrasters Forum", root_path %> </p></div>
+			<div id="buttons">
+				<%if user_signed_in? %>
+					<%= link_to  "New post", new_post_path%>
+				<%else%>
+					<%= link_to  "Sign Up", new_user_registration_path %>
+					<%= link_to  "Sign In", new_user_session_path %>
+				<%end%>
+			</div>
+		</div>
+	</div>
 
+	<div class="wrapper">
+		<p class="notice"><%= notice %></p>
+    	<p class="alert"><%= alert %></p>
+	</div>
 
-<%= yield %>
+	<div class="wrapper">
+		<%= yield %>
+	</div>
 
 </body>
 </html>
