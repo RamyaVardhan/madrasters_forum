@@ -1,7 +1,7 @@
-<div id="post_content">
+<div class="post-content">
 	<h1> <%= @post.title%></h1> 
 	<p> <%= @post.content%> </p>
-	<div id="comments">
+	<div class="comments">
 		<h2><%= @post.comments.count %> Comments </h2>
 		<%= render @post.comments %>
 		<h3> Reply to thread</h3>
@@ -11,6 +11,6 @@
 <br/>
 <hr/>
 <br/>
-<%= link_to  "Edit",edit_post_path(@post), :class => "button"%>
-<%= link_to  "Delete",post_path(@post), method: :delete, data: { confirm: "Are you sure you want to do this?" },:class => "button"%>
+<%= link_to  "Edit",edit_post_path(@post), :class => "btn btn-default"%>
+<%= link_to  "Delete",post_path(@post), method: :delete, data: { confirm: "Are you sure you want to do this?" },:class => "btn btn-defualt"%>
 
