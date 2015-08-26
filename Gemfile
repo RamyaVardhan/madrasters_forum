@@ -8,6 +8,7 @@ gem 'mysql2'
 gem 'debugger', '~> 1.6.8'
 
 # Use SCSS for stylesheets
+gem 'semantic-ui-sass'
 gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
