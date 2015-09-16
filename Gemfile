@@ -33,9 +33,16 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# #For photos upload
+# gem 'aws-sdk'
+# gem 'paperclip'
+
 gem 'haml','~> 4.0.5'
 gem 'simple_form','~> 3.0.2'
 gem 'devise', '~> 3.4.1'
+gem 'omniauth'
+gem 'omniauth'
+gem 'omniauth-facebook'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
