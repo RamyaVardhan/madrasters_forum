@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
 
          has_many :posts
          has_many :comments
+         has_many :domains,:class_name => "Domain", :foreign_key => :lead_id
+         has_many :events,:class_name => "Event", :foreign_key => :manager_id
+         belongs_to :location,:class_name => "Location", :foreign_key => :location_id
 
 
    def self.from_omniauth(auth)

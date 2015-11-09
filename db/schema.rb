@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150916070752) do
+ActiveRecord::Schema.define(version: 20151109172045) do
 
   create_table "comments", force: true do |t|
     t.text     "comment"
@@ -23,6 +23,38 @@ ActiveRecord::Schema.define(version: 20150916070752) do
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "domains", force: true do |t|
+    t.text     "name"
+    t.integer  "lead_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.text     "name"
+    t.text     "description"
+    t.integer  "type_id"
+    t.integer  "manager_id"
+    t.integer  "event_type"
+    t.integer  "count"
+    t.text     "venue"
+    t.integer  "domain_id"
+    t.integer  "location_id"
+    t.integer  "speaker_id"
+    t.text     "team"
+    t.text     "agenda"
+    t.date     "event_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", force: true do |t|
+    t.text     "name"
+    t.integer  "manager_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -58,6 +90,7 @@ ActiveRecord::Schema.define(version: 20150916070752) do
     t.string   "profession"
     t.string   "provider"
     t.string   "uid"
+    t.integer  "location_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
