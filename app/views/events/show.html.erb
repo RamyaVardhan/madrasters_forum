@@ -1,0 +1,19 @@
+<div id="post_content">
+	<h1>Event Name :  <%= @event.name%></h1> 
+	<p> Event Manager : <%= @event.manager.try(:name)%> </p>
+	<p> Event Type : <%= @event.event_type %> </p>
+	<p> Location : <%= @event.location.try(:name) %> </p>
+	<p> Domain : <%= @event.domain.try(:name) %> </p>
+	<p> Speaker : <%= @event.speaker_id %> </p>
+	<p> Venue : <%= @event.venue %> </p>
+	<p> Count : <%= @event.count %> </p>
+	<p> Event Date : <%= @event.event_date %> </p>
+	<p> Team : <%= @event.team %> </p>
+	<p> Agenda : <%= @event.agenda %> </p>
+</div>
+<br/>
+<hr/>
+<br/>
+<%= link_to  "Edit",edit_event_path(@event), :class => "button"%>
+<%= link_to  "Delete",event_path(@event), method: :delete, data: { confirm: "Are you sure you want to do this?" },:class => "button"%>
+

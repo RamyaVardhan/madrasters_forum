@@ -1,0 +1,14 @@
+<div id="posts">
+<% @events.each do |event|%>
+	<div class="post"> 
+		<h2 class="title">Event Name : <%= link_to event.name,event%></h2>
+		<p class="published_date">Description : <%= event.description %></p>
+		<p class="published_date">Count : <%= event.count %></p>
+		<p class="published_date">Venue : <%= event.venue %></p>
+		<p class="published_date">Domain : <%= event.domain.try(:name) %></p>
+		<p class="published_date">Location : <%= event.location.try(:name) %></p>
+		<p class="published_date">Event date : <%= event.event_date %></p>
+		<p class="published_date">Manager : <%= event.manager.try(:email) %></p>
+	</div>
+<%end%>
+</div>
