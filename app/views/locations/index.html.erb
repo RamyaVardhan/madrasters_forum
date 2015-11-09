@@ -1,0 +1,8 @@
+<div id="posts">
+<% @locations.each do |location|%>
+	<div class="post"> 
+		<h2 class="title">Location Name : <%= link_to location.name,location%></h2>
+		<p class="published_date">Manager : <%= location.manager.try(:email) %></p>
+	</div>
+<%end%>
+</div>
