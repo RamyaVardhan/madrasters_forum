@@ -1,0 +1,10 @@
+<div id="post_content">
+	<h1>Domain Name :  <%= @domain.name%></h1> 
+	<p> Domain Lead : <%= @domain.lead.try(:name)%> </p>
+</div>
+<br/>
+<hr/>
+<br/>
+<%= link_to  "Edit",edit_domain_path(@domain), :class => "button"%>
+<%= link_to  "Delete",domain_path(@domain), method: :delete, data: { confirm: "Are you sure you want to do this?" },:class => "button"%>
+

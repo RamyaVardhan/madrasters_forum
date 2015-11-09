@@ -1,0 +1,8 @@
+<div id="posts">
+<% @domains.each do |domain|%>
+	<div class="post"> 
+		<h2 class="title">Domain Name : <%= link_to domain.name,domain%></h2>
+		<p class="published_date">Manager : <%= domain.lead.try(:email) %></p>
+	</div>
+<%end%>
+</div>
