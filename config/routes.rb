@@ -4,6 +4,7 @@ MadrastersForum::Application.routes.draw do
   resources :domains
   resources :events
   resources :locations
+  resources :roles
   resources :posts do
   	resources :comments
   end

@@ -1,0 +1,7 @@
+<div id="posts">
+<% @roles.each do |role|%>
+	<div class="post"> 
+		<h2 class="title">Role Name : <%= link_to role.name,role%></h2>
+	</div>
+<%end%>
+</div>

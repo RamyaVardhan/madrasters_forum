@@ -40,9 +40,17 @@ end
 gem 'haml','~> 4.0.5'
 gem 'simple_form','~> 3.0.2'
 gem 'devise', '~> 3.4.1'
+
+#For Facebook Integration
 gem 'omniauth'
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+#Roles and Privileges
+gem 'authority'
+gem 'rolify'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
