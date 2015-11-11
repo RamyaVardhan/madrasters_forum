@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151109172045) do
+ActiveRecord::Schema.define(version: 20151111045746) do
 
   create_table "comments", force: true do |t|
     t.text     "comment"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20151109172045) do
     t.date     "event_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "helpline_number"
   end
 
   create_table "locations", force: true do |t|
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 20151109172045) do
     t.integer  "manager_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "helpline_number"
   end
 
   create_table "posts", force: true do |t|

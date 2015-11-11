@@ -39,7 +39,8 @@ class EventsController < ApplicationController
 	end
 
 	def post_params
-		params.require(:event).permit(:name,:description,:type_id,:manager_id,:event_type,:count,:venue,:domain_id,:location_id,:speaker_id,:team,:agenda,:event_date)
+		params.require(:event).permit(:name,:description,:type_id,:manager_id,:event_type,:count,
+			:venue,:domain_id,:location_id,:speaker_id,:team,:agenda,:event_date,:helpline_number)
 	end
 
 end

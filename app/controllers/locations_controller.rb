@@ -39,7 +39,7 @@ class LocationsController < ApplicationController
 	end
 
 	def post_params
-		params.require(:location).permit(:name,:manager_id)
+		params.require(:location).permit(:name,:manager_id,:helpline_number)
 	end
 
 end

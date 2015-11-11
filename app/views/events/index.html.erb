@@ -8,6 +8,7 @@
 		<p class="published_date">Domain : <%= event.domain.try(:name) %></p>
 		<p class="published_date">Location : <%= event.location.try(:name) %></p>
 		<p class="published_date">Event date : <%= event.event_date %></p>
+		<p class="published_date">Helpline Number : <%= event.helpline_number ? event.helpline_number : event.location.try(:helpline_number)%></p>
 		<p class="published_date">Manager : <%= event.manager.try(:email) %></p>
 	</div>
 <%end%>
