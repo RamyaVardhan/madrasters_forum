@@ -1,0 +1,25 @@
+<div id="posts">
+<table border="1">
+	<tr> 
+		<th> Name </th>
+		<th> Manager</th>
+		<th> Event Type </th>
+		<th> Count </th>
+		<th> Venue </th>
+		<th> Event Date </th>
+	</tr>
+	<% events.each do |event|%>
+	<tr>
+		<td> <%= event.name %> </td>
+		<td> <%= event.manager.try(:name) || "--" %> </td>
+		<td> <%= event.get_event_type %> </td>
+		<td> <%= event.count %> </td>
+		<td> <%= event.venue %> </td>
+		<td> <%= event.event_date %> </td>	
+	<tr>
+	<%end%>
+
+</table>
+
+
+</div>
