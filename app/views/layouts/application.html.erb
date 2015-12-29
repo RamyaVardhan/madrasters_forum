@@ -9,11 +9,12 @@
 <body> 
 	<div class="main_header clearfix">
 		<div class="wrapper">
-			<div id="logo"> <p> <%= link_to "Test", root_path %> </p></div>
+			<div id="logo"> <p> <%= link_to "Madrasters.com", root_path %> </p></div>
 			<div id="buttons">
 				<%if user_signed_in? %>
-					<%= link_to  "New post", new_post_path%>
-					<%= link_to  "Edit Profile", edit_user_registration_path(current_user)%>
+					<%= link_to  "Location", locations_path%>
+					<%= link_to  "Domain", domains_path%>
+					<%= link_to  "Add Event", new_event_path %>
 					<%= link_to("Sign Out", destroy_user_session_path,  :method=>'delete')%>
 				<%else%>
 					<%= link_to  "Sign Up", new_user_registration_path %>

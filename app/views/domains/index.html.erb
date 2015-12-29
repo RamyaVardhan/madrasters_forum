@@ -2,18 +2,13 @@
 
 
 
-<%= link_to "Add Domain", new_domain_path %>
+<div class="post"><%= link_to "Add Domain", new_domain_path %></div>
 <% @domains.each do |domain|%>
 	<div class="post"> 
-		<h2 class="title">Domain Name : <%= link_to domain.name,domain%></h2>
-		<p><%= link_to "Edit Domain", edit_domain_path(domain) %></p>
-		<p class="published_date">Manager : <%= domain.lead.try(:email) %></p>
-		<% domain_events =  domain.events.find(:all,:order => "event_date desc") %>
-		<% if domain_events.count > 0 %>
-			<%= render :partial => "event_table",:locals => {:events =>  domain_events } %>
-		<%else%>
-				Oops! There are no events for this domain
-		<%end%>
+		<h2 class="title"><%= link_to domain.name,domain%></h2>
+		
+		<p class="published_date"><b>Manager : </b><%= domain.lead.try(:email) %></p>
+		
 	</div>
 <%end%>
 </div>

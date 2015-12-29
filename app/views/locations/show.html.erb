@@ -2,6 +2,25 @@
 	<h1>Location Name :  <%= @location.name%></h1> 
 	<p> Location Manager : <%= @location.manager.try(:name)%> </p>
 	<p> Location Helpline Number : <%= @location.helpline_number %> </p>
+	<% location_users = @location.users %>
+	<% if location_users.count > 0 %>
+		<table border="1"> 
+			<th> Name </th>
+			<th> Gender	 </th>
+			<th> Email </th>
+			<th> DOB </th>
+			<th>  </th>
+			<%location_users.each do |user|%>
+				<tr> 
+					<td> <%= user.name %></td>
+					<td> <%= user.gender %></td>
+					<td> <%= user.email %></td>
+					<td> <%= user.dob %></td>
+					<td> <%= link_to  "Edit",edit_user_registration_path(user)%> </td>
+				</tr>
+			<%end%>
+		</table>
+	<%end%>
 </div>
 <br/>
 <hr/>

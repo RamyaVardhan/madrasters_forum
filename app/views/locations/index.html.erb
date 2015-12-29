@@ -1,7 +1,10 @@
+
+
 <div id="posts">
+	<div class="post"><%= link_to "Add Location", new_location_path %></div>
 <% @locations.each do |location|%>
 	<div class="post"> 
-		<h2 class="title">Location Name : <%= link_to location.name,location%></h2>
+		<h2 class="title"><%= link_to location.name,location%></h2>
 		<p class="published_date">Manager : <%= location.manager.try(:name) %></p>
 		<p class="published_date">Helpline Number : <%= location.helpline_number %></p>
 	</div>

@@ -17,7 +17,7 @@ body{
 	background: #EDEFF0;
 }
 .wrapper {
-	width: 60%;
+	
 	max-width: 1140px;
 	margin: 0 auto;
 }
@@ -32,13 +32,15 @@ body{
 
 .main_header{
 	width: 100%;
-	max-width: 1140px;
+	max-width: 1100px;
 	margin: 0 auto;
 	background: white;
+	padding:0 20px;
+	    border-radius: .5em;
 	#logo{
 		float: left;
 		a{
-			text-transform: uppercase;
+			text-transform:capitalize;
 			font-weight: 700;
 			letter-spacing: -1px;
 			font-size: 1.2rem;
@@ -50,7 +52,7 @@ body{
 
 #posts{
 	background: white;
-	padding: 2em 5%;
+	padding: 30px;
 	border-radius: .5em;
 	.post{
 		margin: 1em 0;
@@ -73,6 +75,14 @@ body{
 	}
 }
 
+#new_event, #new_location, #new_domain, [id^="edit_domain_"],[id^="edit_event_"],[id^="edit_location_"]{	
+	div{ 
+		padding-bottom:20px; 
+		border-bottom:1px solid #ccc;
+		margin-bottom:20px
+	}
+	label{display:inline-block; width:180px}
+}
 #buttons{
 	float: right;
 	a{
@@ -98,7 +108,7 @@ body{
 
 #post_content{
 	background: white;
-	padding: 2em 5%;
+	padding: 30px;
 	border-radius: .5em;
 	h1{
 		font-weight: 100;
