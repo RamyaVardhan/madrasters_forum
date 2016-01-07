@@ -1,0 +1,359 @@
+body {	
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+h1, .h1, 
+h2, .h2, 
+h3, .h3, 
+h4, .h4 {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+p {
+	margin-bottom: 30px;
+}
+.navbar-default .navbar-toggle {
+	border: 0;
+}
+.btn {
+	padding: 5px 25px;
+	background-image: none;
+	border-radius: 0;
+	border: 3px solid transparent;
+	font-size: 28px;
+	font-weight: bold;
+	text-shadow: none;
+	box-shadow: none;
+}
+.section > .container-fluid {
+	padding: 40px 15px;
+	min-height: 420px;
+}
+.section .section-heading {
+	margin-bottom: 30px;
+	text-align: center;
+}
+.img-wrap .img {
+	display: block;
+	width: 100%;
+}
+.section .inner-wrap {
+	padding: 0 40px;
+}
+
+/* ++ HEADER ++ */
+#header { 
+	position: fixed;
+  	width: 100%;
+  	height: 60px;
+  	z-index: 1000;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);	
+}
+#header .navbar-default {
+	background: transparent;
+	border-radius: 0;
+	box-shadow: none;	
+}
+#header .navbar-brand {
+	margin-left: 15px;
+	padding: 0;	
+	height: auto;
+}
+#header .navbar {	
+	margin: 10px 0;	
+	min-height: 40px;
+	border: 0;
+}
+#header .navbar-nav > li > a {
+	padding: 10px 15px;
+	text-transform: uppercase;
+}
+#header .navbar-toggle {
+	margin: 4px 15px;
+}
+/* -- HEADER -- */
+
+#content { padding-top: 60px; }
+/* ++ HOME ++ */ 
+#home {
+	text-align: center;
+	text-transform: uppercase;
+}
+#home .container-fluid {
+	padding: 120px 15px 40px; 
+	background: #cccccc;
+}
+#home .logo-wrap {
+	width: 140px;
+	margin: 0 auto;
+}
+#home .main-heading,
+#home .date {
+	margin-bottom: 30px;
+}
+#home .register-btn {
+	margin: 40px 0 20px;
+}
+#home .location-hook {
+    text-decoration: none;
+}
+
+/* -- HOME -- */
+
+/* ++ SPEAKERS / TEAM ++ */
+.profiles-list { 
+	display: table;
+	margin: 0 auto;
+}
+ .profile-wrap {	
+	color: #fff;	
+	text-align: center;
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+
+.profile-wrap .img-wrap {
+	position: relative;
+	margin: 0 auto 20px;
+	padding: 1px;
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	z-index: 5;	
+	overflow: hidden;
+	cursor: pointer;
+}
+.profile-wrap .img-wrap .img {
+	border-radius: 50%;
+}
+.profile-wrap .info-wrap {
+	position: absolute;
+	top: 180px;
+	left: 0;
+	width: 180px;
+	height: 180px;
+	background: rgba(0, 0, 0, 0.8);
+	opacity: 1;
+}
+.profile-wrap .img-wrap:hover .info-wrap {
+	top: 0;
+}
+.profile-wrap .social-links {
+	display: table;
+	margin: 57px auto 0;
+}
+.profile-wrap .social-links .item {
+	float: left;
+	margin: 10px;
+}
+.profile-wrap .social-links .hook {
+	display: inline-block;
+	width: 46px;
+	height: 46px;	
+	font-size: 20px;
+	border-width: 2px;
+	border-style: solid;
+	line-height: 44px;
+	vertical-align: middle;
+	border-radius: 50%;
+}
+.prof-name {
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.prof-desc {
+	font-weight: 300;
+	text-align: left;
+}
+.event-timeline {
+	float: right;
+	position: relative; 
+	padding: 0;   
+    width: 50%;
+    font-size: 22px;
+    list-style: none;
+}
+.event-timeline li {
+  position: relative;
+  min-height: 135px;
+  padding-left: 0px;
+}
+.event-timeline li:after {
+	display: table;
+    content: " ";
+	clear: both;
+}
+.event-timeline .session-title {
+	position: relative;
+}
+.event-timeline:before, .event-timeline .session-title:before {
+  content: '';
+  position: absolute;
+  top: 0;  
+}
+.event-timeline:before {
+  width: 4px;
+  height: 100%;
+  left: -2px;
+}
+.event-timeline .session-title:before {
+  width: 24px;
+  height: 24px;
+  left: -12px;
+}
+.event-timeline .session-title {
+  text-align: left;
+  padding-left: 40px;
+  width: 330px;
+}
+.event-timeline .session-time {
+  position: absolute;
+  width: 330px;
+  top: 0;
+  left: -370px;
+  text-align: right;
+}
+
+/* Gallery */
+#gallery .thumbnail {
+	background: transparent;
+	border: 0;
+	padding: 0;
+	border-radius: 0;
+	box-shadow: none;
+	margin-bottom: 2px;
+}
+.gallery-list .item {
+	padding: 0 1px;
+}
+
+
+/* Presentations */
+#presentations ul {
+	list-style: none;
+}
+#presentations li {
+	margin-bottom: 15px;
+	text-align: center;
+}
+#presentations .hook {
+	display: inline-block;
+	padding: 5px 0;
+	font-size: 18px;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: none;
+	border-bottom: 2px solid #fff;
+}
+#presentations .hook:hover {
+	background: #00457c;
+	color: #ffdb17;
+	border-bottom: 2px solid #ffdb17;
+}
+#connect .helpline-info, 
+#connect .mail-info,
+#connect .social-info {
+	margin: 80px 0;
+}
+#connect .social-links {
+	list-style: none;
+	display: table;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;	
+	float: right;	
+}
+#connect .social-links li  {
+	display: inline-block;
+	text-align: center;
+	padding: 0 5px;
+}
+#connect .social-links .hook {
+	display: inline-block;
+	font-size: 18px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    line-height: 44px;
+    text-decoration: none;
+}
+#connect .gmap-wrap {
+	position: relative;
+}
+.gmap {
+	position: absolute;
+	top: 130px;
+	left: 0;
+	margin-bottom: 40px;
+	width: 100%;
+	height: 400px;
+	z-index: -1;
+}
+.gmap:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+/* Colorbox */
+#cboxContent{
+    background-image: none;    
+    background-color: transparent;
+}
+#cboxLoadedContent{
+	padding: 2em;
+    margin: 0;
+}
+#cboxOverlay{
+    background-image: none;
+    background-color: #000000;
+    opacity: 0.8 !important;
+}
+#colorbox, #cboxOverlay, #cboxWrapper{ overflow: visible; }
+#cboxContent{ overflow: inherit; }
+#cboxMiddleRight, #cboxMiddleLeft, #cboxTopCenter, #cboxBottomCenter, #cboxTopRight, #cboxTopLeft, #cboxBottomRight, #cboxBottomLeft {
+    background-image: none;
+}
+#cboxClose{
+    background: #fff url("../images/cboxclose.png") center center no-repeat;
+    width: 24px;
+    height: 24px;
+    top: -12px;
+    right: -12px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #333;
+    outline: 0;
+    border-radius: 50%;
+    background-size: 14px;
+}
+#cboxClose:hover{
+    background: #fff url("../images/cboxclose.png") center center no-repeat;
+    background-size: 14px;
+}
+.cboxPhoto{ max-width: 800px; }
+#cboxNext, #cboxPrevious{
+	position: absolute;
+	top: 50%;
+	outline: none;
+	background-image: none;
+    background-image: none;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    width: 34px;
+    height: 34px;
+}
+#cboxNext{
+	right: -10%;
+}
+#cboxPrevious{ 
+	left: -10%;
+}
+
+/* Colorbox Override */

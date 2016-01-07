@@ -1,16 +1,146 @@
+
+
+
 	<div id="post_content">
-	<h1>Event Name :  <%= @event.name%></h1> 
-	<p> Event Manager : <%= @event.manager.try(:name)%> </p>
+
+	<div id="content">
+		<div id="home" class="section clearfix">
+			<div class="container-fluid">
+				<div class="row clearfix">
+					<div class="col-xs-12">
+						<h1 class="main-heading">
+							<%= @event.name%>
+						</h1>
+						<div class="h3 date">
+							<%= @event.event_date.strftime("%d %B %Y") %> 
+						</div>
+						<div class="h3 location">
+							<%= @event.venue %>, <%= @event.location.try(:name) %>
+						</div>                       
+					</div>
+				</div>
+			</div>
+			<!-- End Container -->
+		</div>
+		<!-- End Home -->
+
+		<div id="about" class="section">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 inner-wrap">
+						<div class="h2 section-heading">About Workshop</div>
+						<!-- Heading -->
+						<p><%= @event.description %></p>
+					</div>					
+				</div>
+				
+			</div>
+			<!-- End Container -->
+		</div>
+		<!-- End About -->
+
+		<div id="speakers-team" class="section">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 inner-wrap">
+						<div class="h2 section-heading">Speakers / Team</div>
+						<!-- Heading -->					
+
+						<div class="row">
+							<div class="col-xs-12 text-align">
+								<%= @event.speaker_id %>, <%= @event.team %>
+							</div>
+						</div>		
+					</div>
+				</div>
+				<!-- End col xs 12 -->
+			</div>
+			<!-- End Container -->
+		</div>
+		<!-- End Speakers Team -->
+
+		<div id="gallery" class="section">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 inner-wrap">
+						<div class="h2 section-heading">Gallery</div>
+
+						<div class="row gallery-list">
+						</div>
+					</div>
+				</div>		
+			</div>
+		</div>
+		
+
+		<div id="connect" class="section">
+			<div class="container-fluid gmap-wrap">
+
+				<div class="row">
+					<div class="col-xs-12 inner-wrap">
+						<div class="h2 section-heading">Connect</div>
+						<!-- Heading -->
+
+						<div class="row connect-info">
+							<div class="col-xs-12 col-sm-4 helpline-info">
+								<h4>Helpline Number</h4>
+								<span>+91 9176-647-766</span>
+							</div>
+
+							<div class="col-xs-12 col-sm-4 mail-info text-center">
+								<h4>Mail Id</h4>
+								<a href="maitlto:madrasters@gmail.com" class="link">madrasters@gmail.com</a>
+							</div>
+
+							<div class="col-xs-12 col-sm-4 social-info">
+								<ul class="social-links">
+									<li>
+										<a href="https://www.facebook.com/madrasters" target="_blank" class="fa fa-facebook hook"></a>
+									</li>
+
+									<li>
+										<a href="https://twitter.com/madrasters" target="_blank" class="fa fa-twitter hook"></a>
+									</li>
+
+									<li>
+										<a href="https://plus.google.com/+MadrastersPage/posts" target="_blank" class="fa fa-google-plus hook"></a>
+									</li>
+
+									<li>
+										<a href="http://www.pinterest.com/madrasters/" target="_blank" class="fa fa-pinterest hook"></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- End Row -->							
+					</div>
+				</div>
+
+				<div class="gmap">
+	                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15671.796520040196!2d76.9907874!3d10.8914707!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5da037bc2b7d2b3f!2sHindusthan+College+Of+Engineering+And+Technology!5e0!3m2!1sen!2sin!4v1441986585318" width="100%" height="400" frameborder="0" style="border:0"></iframe>
+				</div>
+			</div>
+			<!-- End Container -->
+
+		</div>
+		<!-- End Connect -->
+	</div>	
+    <div class="row">
+    <div class="col-lg-12 text-center">        
+	<h1></h1> 
+	<p><%= @event.manager.try(:name)%> </p>
 	<p> Event Type : <%= @event.event_type %> </p>
-	<p> Location : <%= @event.location.try(:name) %> </p>
+	<p> Location :  </p>
 	<p> Domain : <%= @event.domain.try(:name) %> </p>
-	<p> Speaker : <%= @event.speaker_id %> </p>
-	<p> Venue : <%= @event.venue %> </p>
+	<p> Speaker :  </p>
+	<p> Venue :  </p>
 	<p> Count : <%= @event.count %> </p>
-	<p> Event Date : <%= @event.event_date %> </p>
-	<p> Team : <%= @event.team %> </p>
+	<p> Event Date : </p>
+	<p> Team :  </p>
 	<p> Agenda : <%= @event.agenda %> </p>
 	<p> Helpline Number : <%= @event.helpline_number %> </p>
+	</div>
+</div>
 </div>
 <br/>
 <hr/>

@@ -2,24 +2,61 @@
 <html>
 <head>
   <title> Test </title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  
+<%= stylesheet_link_tag 'bootstrap'%>
+<%= stylesheet_link_tag 'agency'%>
+<%= stylesheet_link_tag 'style'%>
+  <!-- <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %> -->
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body> 
+
+	<nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src=""></a>
+            </div>	
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            	<%if user_signed_in? %>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <%= link_to  "Location", locations_path%>
+                    </li>
+                     <li>
+                        <%= link_to  "Domain", domains_path%>
+                    </li>
+                    <li>
+                       <%= link_to  "Add Event", new_event_path %>
+                    </li>
+                    <li>
+                        <%= link_to("Sign Out", destroy_user_session_path,  :method=>'delete')%>
+                    </li>
+                </ul>
+                <%else%>
+                <ul>
+                	<li><%= link_to  "Sign Up", new_user_registration_path %></li>
+					<li><%= link_to  "Sign In", new_user_session_path %></li>
+				</ul>
+				<%end%>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
 	<div class="main_header clearfix">
 		<div class="wrapper">
 			<div id="logo"> <p> <%= link_to "Madrasters.com", root_path %> </p></div>
 			<div id="buttons">
-				<%if user_signed_in? %>
-					<%= link_to  "Location", locations_path%>
-					<%= link_to  "Domain", domains_path%>
-					<%= link_to  "Add Event", new_event_path %>
-					<%= link_to("Sign Out", destroy_user_session_path,  :method=>'delete')%>
-				<%else%>
-					<%= link_to  "Sign Up", new_user_registration_path %>
-					<%= link_to  "Sign In", new_user_session_path %>
-				<%end%>
+				
 			</div>
 		</div>
 	</div>
