@@ -1,5 +1,5 @@
 <div id="post_content">
-	<h1>Location Name :  <%= @location.name%></h1> 
+	<h1>Location Name :  <%= @location.label%></h1> 
 	<p> Location Manager : <%= @location.manager.try(:name)%> </p>
 	<p> Location Helpline Number : <%= @location.helpline_number %> </p>
 	<% location_users = @location.users %>

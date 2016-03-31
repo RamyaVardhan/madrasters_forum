@@ -51,7 +51,8 @@ ActiveRecord::Schema.define(version: 20151214070007) do
   end
 
   create_table "locations", force: true do |t|
-    t.text     "name"
+    t.string   "name"
+    t.string   "label"
     t.integer  "manager_id"
     t.datetime "created_at"
     t.datetime "updated_at"

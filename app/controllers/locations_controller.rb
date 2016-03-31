@@ -11,7 +11,7 @@ class LocationsController < ApplicationController
 
     def create
     	@location = current_user.build_location(post_params)
-
+    	@location.name = @location.label.strip().strip().gsub(/\s/, '_').downcase
     	if @location.save
 			redirect_to @location
 		else
@@ -39,7 +39,7 @@ class LocationsController < ApplicationController
 	end
 
 	def post_params
-		params.require(:location).permit(:name,:manager_id,:helpline_number)
+		params.require(:location).permit(:label,:manager_id,:helpline_number)
 	end
 
 end
