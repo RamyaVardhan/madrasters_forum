@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20151214070007) do
   create_table "events", force: true do |t|
     t.text     "name"
     t.text     "description"
+    t.integer  "display_id"
     t.integer  "type_id"
     t.integer  "manager_id"
     t.integer  "event_type"

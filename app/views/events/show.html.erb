@@ -2,7 +2,7 @@
 
 
 	<div id="post_content">
-
+<%if @event.present? %>
 	<div id="content">
 		<div id="home" class="section clearfix">
 			<div class="container-fluid">
@@ -147,4 +147,6 @@
 <br/>
 <%= link_to  "Edit",edit_event_path(@event), :class => "button"%>
 <%= link_to  "Delete",event_path(@event), method: :delete, data: { confirm: "Are you sure you want to do this?" },:class => "button"%>
-
+<%else%>
+	<p> Oops! There is no event here!</p>
+<%end%>
