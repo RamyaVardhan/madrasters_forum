@@ -1,15 +1,33 @@
-<div id="posts">
-<% @events.each do |event|%>
-	<div class="post"> 
-		<h2 class="title">Event Name : <%= link_to event.name,event%></h2>
-		<p class="published_date">Description : <%= event.description %></p>
-		<p class="published_date">Count : <%= event.count %></p>
-		<p class="published_date">Venue : <%= event.venue %></p>
-		<p class="published_date">Domain : <%= event.domain.try(:name) %></p>
-		<p class="published_date">Location : <%= event.location.try(:name) %></p>
-		<p class="published_date">Event date : <%= event.event_date %></p>
-		<p class="published_date">Helpline Number : <%= event.helpline_number ? event.helpline_number : event.location.try(:helpline_number)%></p>
-		<p class="published_date">Manager : <%= event.manager.try(:email) %></p>
-	</div>
+<%if @events.present? %>
+	<table border="4">
+		<tr>
+			<th> Event Name</th>
+			<th> Description </th>
+			<th> Participants Count</th>
+			<th> Venue</th>
+			<th> Madraster Branch</th>
+			<th> Domain</th>
+			<th> Event Date</th>
+			<th> Helpline Number </th>
+			<th> Manager </th>
+			<th>  </th>
+			
+		</tr>
+		<% @events.each do |event|%>
+		<tr>
+			<td><%= link_to event.name,event%></td>
+			<td><%= event.description %></td>
+			<td><%= event.count %></td>
+			<td><%= event.venue %></td>
+			<td><%= event.branch_name %></td>
+			<td><%= event.domain_name %></td>
+			<td><%= event.event_date.strftime("%d %b,%Y") %></td>
+			<td><%= event.helpline_number ? event.helpline_number : event.location.try(:helpline_number) %></td>
+			<td><%= event.manager_name%></td>
+			<td><%=link_to "Edit",edit_event_path(@event), :class => "button"%></td>
+		<tr>	
+		<%end%>
+	</table>
+<%else%>
+	Oops! there are no events 
 <%end%>
-</div>

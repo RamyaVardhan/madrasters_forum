@@ -1,14 +1,23 @@
-<div id="posts">
-
-
-
-<div class="post"><%= link_to "Add Domain", new_domain_path %></div>
-<% @domains.each do |domain|%>
-	<div class="post"> 
-		<h2 class="title"><%= link_to domain.name,domain%></h2>
-		
-		<p class="published_date"><b>Manager : </b><%= domain.lead.try(:email) %></p>
-		
-	</div>
+<%if @domains.present?%>
+<table border="4">
+	<tr>
+		<th> Domain ID </th>
+		<th> Domain Name </th>
+		<th> Domain Manager </th>
+		<th></th>
+	</tr>
+	<% @domains.each do |domain|%>
+	<tr>
+		<td> <%= domain.id %> </td>
+		<td> <%= link_to domain.name,domain%> </td>
+		<td> <%= domain.lead_name %> </td>
+		<td> <%= link_to  "Edit",edit_domain_path(domain) %> </td>
+	<tr>
+	<%end%>
+</table>
+<%else%>
+	Oops! there is no domain! 
 <%end%>
-</div>
+
+
+

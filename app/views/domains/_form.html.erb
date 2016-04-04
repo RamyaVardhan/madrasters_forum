@@ -1,6 +1,9 @@
-<div id="posts"><%= simple_form_for @domain do |f|%>
-	<%= f.input :name %>
-	<%= f.input :lead_id %>
+<%= simple_form_for @domain do |f|%>
+	<%= f.label :label, "Name" %>
+	<%= f.text_field :name %><br/>
+
+	<%= f.label :lead_id, "Domain Manager" %>
+	<%= f.select :lead_id, "<option value=''>...</option>".html_safe<<options_for_select(User.all.collect { |u| [u.name,u.id] },@domain.lead_id),{}%><br/>
+
 	<%= f.submit %>
 <%end%>
-</div>

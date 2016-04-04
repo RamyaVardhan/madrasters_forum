@@ -11,4 +11,16 @@ class Event < ActiveRecord::Base
 	def get_event_type
 		EVENT_TYPE[self.event_type]
 	end
+
+	def branch_name
+ 		self.location.try(:label)
+ 	end
+
+ 	def domain_name
+ 		self.domain.try(:name)
+ 	end
+
+ 	def manager_name
+ 		self.manager.try(:name)
+ 	end
 end

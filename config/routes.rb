@@ -7,8 +7,6 @@ MadrastersForum::Application.routes.draw do
     resources :events
   end
 
-
-
   resources :events
   get "meetup" => "meetup#index"
   get "meetup/:location" => "meetup#index"
@@ -20,28 +18,6 @@ MadrastersForum::Application.routes.draw do
   get "workshop/:location" => "workshop#index"
   get "workshop/:location/:id" => "workshop#show"
   get "meetup/:location/:id/edit" => "workshop#edit"
-
-
-  # get 'events/new', :to => 'meetups#new', :as => :my_page
-
-  #  resources :chennai do
-  #   resources :events
-  #   get 'chennai_test', :on => :member
-  # end
-
-  # resources :events
-  # resources :chennai, controller: 'locations'
-
-  # resources :meetup do
-  #   resources :chennai, controller: 'locations'
-  # end
-
-    # resources :chennai do
-    #   collection do
-    #     get 'meetup'
-    #   end
-    # end
-    # get '/chennai/meetup', to: 'meetups#index'
 
   resources :posts do
     resources :comments

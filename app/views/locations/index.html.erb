@@ -1,12 +1,22 @@
-
-
-<div id="posts">
-	<!-- <div class="post"><%= link_to "Add Location", new_location_path %></div> -->
-<% @locations.each do |location|%>
-	<div class="post"> 
-		<h2 class="title"><%= link_to location.label,location%></h2>
-		<p class="published_date">Manager : <%= location.manager.try(:name) %></p>
-		<p class="published_date">Helpline Number : <%= location.helpline_number %></p>
-	</div>
+<%if @locations.present?%>
+<table border="4">
+	<tr>
+		<th> Location ID </th>
+		<th> Location Name </th>
+		<th> Location Manager </th>
+		<th> Helpline Number </th>
+		<th> </th>
+	</tr>
+	<% @locations.each do |location|%>
+	<tr>
+		<td> <%= location.id%> </td>
+		<td> <%= link_to location.label,location%> </td>
+		<td> <%= location.location_manager %> </td>
+		<td> <%= location.helpline_number %> </td>
+		<td> <%= link_to  "Edit",edit_location_path(location) %> </td>
+	<tr>
+	<%end%>
+</table>
+<%else%>
+	Oops! there is no location added! 
 <%end%>
-</div>

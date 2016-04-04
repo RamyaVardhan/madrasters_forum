@@ -1,19 +1,46 @@
 <div id="posts">
 <%= simple_form_for @event do |f|%>
-	<%= f.input :name %>
-	<%= f.input :description %>
-	<%= f.input :type_id %>
-	<%= f.input :manager_id %>
-	<%= f.input :event_type %>
-	<%= f.input :count %>
-	<%= f.input :venue %>
-	<%= f.input :domain_id %>
-	<%= f.input :location_id %>
-	<%= f.input :speaker_id %>
-	<%= f.input :team %>
-	<%= f.input :agenda %>
-	<%= f.input :event_date %>
-	<%= f.input :helpline_number %>
-	<%= f.submit %>
+
+
+		<%= f.label :name, "Name" %>
+		<%= f.text_field :name %><br/>
+
+		<%= f.label :description, "Description"%>
+		<%= f.text_area :description,:rows => 5 %><br/>
+
+		<%= f.label :event_type, "Event Type "%>
+		<%= f.select :event_type, "<option value=''>...</option>".html_safe<<options_for_select(@metric[:event_types],@event.event_type),{}%><br/>
+
+		<%= f.label :manager_id, "Manager "%>
+		<%= f.select :manager_id, "<option value=''>...</option>".html_safe<<options_for_select(@metric[:managers],@event.manager_id),{}%><br/>
+
+		<%= f.label :count, "Total members who took part"%>
+		<%= f.text_field :count %><br/>
+
+		<%= f.label :venue, "Venue"%>
+		<%= f.text_area :venue,:rows => 5  %><br/>
+
+		<%= f.label :location_id, "Madraster Branch "%>
+		<%= f.select :location_id, "<option value=''>...</option>".html_safe<<options_for_select(@metric[:branches],@event.location_id),{}%><br/>
+
+		<%= f.label :domain_id, "Domain"%>
+		<%= f.select :domain_id, "<option value=''>...</option>".html_safe<<options_for_select(@metric[:domains],@event.domain_id),{}%><br/>
+
+		<%= f.label :speaker_id, "Speaker"%>
+		<%= f.select :speaker_id, "<option value=''>...</option>".html_safe<<options_for_select(@metric[:managers],@event.speaker_id),{}%><br/>
+
+		<%= f.label :team, "Team"%> 
+		<%= f.select :team, "<option value=''>...</option>".html_safe<<options_for_select(@metric[:managers],@event.team),{}%>#To be made as multi-select<br/>
+
+		<%= f.label :agenda, "Agenda"%>
+		<%= f.text_area :agenda %><br/>
+
+		<%= f.label :event_date, "Event Date"%>
+		<%= f.date_field :event_date %><br/>
+
+		<%= f.label :helpline_number, "Helplinet Number"%>
+		<%= f.text_field :helpline_number %><br/>
+	
+		<%= f.submit %>
 <%end%>
 </div>

@@ -1,7 +1,14 @@
 class EventsController < ApplicationController
+	before_action :load_metrics, :only => [:new,:edit]
     before_action :load_event, :only => [:show,:edit,:update,:destroy]  
 
-    EVENT_TYPE = {:meetup => 1, :workshop => 2}
+    EVENT_TYPE = [
+    	[1, :meetup, "Meetup"],
+    	[2, :workshop, "Workshop"]
+    ]
+
+    EVENT_TYPE_KEY_BY_ID = Hash[EVENT_TYPE.map{ |i| [i[1],i[0]]}]
+    EVENT_TYPE_LABEL_BY_ID = Hash[EVENT_TYPE.map{ |i| [i[2],i[0]]}]
 
     def index
     	@events = Event.find(:all,:order => :name)
@@ -51,7 +58,7 @@ class EventsController < ApplicationController
 
 
  	def load_location_event conditions={}
- 		conditions.merge!({:event_type => EVENT_TYPE[params[:type]] }) if params[:type].present? 
+ 		conditions.merge!({:event_type => EVENT_TYPE_KEY_BY_ID[params[:type]] }) if params[:type].present? 
     	if params[:location].present?
     		location_id = Location.find_by_name(params[:location]).try(:id)
     		conditions.merge!({:location_id => location_id}) if location_id
@@ -60,6 +67,15 @@ class EventsController < ApplicationController
     		conditions.merge!({:display_id => params[:id]})
     	end
     	params.merge!(:conditions => conditions)
+ 	end
+
+ 	def load_metrics
+ 		@metric = {
+ 			:event_types => EVENT_TYPE_LABEL_BY_ID.to_a,
+ 			:managers    => User.all.collect { |u| [u.name,u.id] },
+ 			:branches    => Location.all.collect { |u| [u.label,u.id] },
+ 			:domains 	 =>  Domain.all.collect { |u| [u.name,u.id] }
+ 		}
  	end
 
 end

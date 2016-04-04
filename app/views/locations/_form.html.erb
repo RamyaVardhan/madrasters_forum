@@ -1,8 +1,12 @@
-<div id="posts">
-	<%= simple_form_for @location do |f|%>
-	<%= f.input :label %>
-	<%= f.input :manager_id %>
-	<%= f.input :helpline_number %>
+<%= simple_form_for @location do |f|%>
+	<%= f.label :label, "Name" %>
+	<%= f.text_field :label %><br/>
+
+	<%= f.label :manager_id, "Manager" %>
+	<%= f.select :manager_id, "<option value=''>...</option>".html_safe<<options_for_select(User.all.collect { |u| [u.name,u.id] },@location.manager_id),{}%><br/>
+
+	<%= f.label :helpline_number, "Helpline Number" %>
+	<%= f.text_field :helpline_number %><br/>
+	
 	<%= f.submit %>
-	<%end%>
-</div>
+<%end%>
