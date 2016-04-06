@@ -21,7 +21,7 @@
 			<td><%= event.venue %></td>
 			<td><%= event.branch_name %></td>
 			<td><%= event.domain_name %></td>
-			<td><%= event.event_date.strftime("%d %b,%Y") %></td>
+			<td><%= event.event_date.strftime("%d %b,%Y") if event.event_date %></td>
 			<td><%= event.helpline_number ? event.helpline_number : event.location.try(:helpline_number) %></td>
 			<td><%= event.manager_name%></td>
 			<td><%=link_to "Edit",edit_event_path(@event), :class => "button"%></td>

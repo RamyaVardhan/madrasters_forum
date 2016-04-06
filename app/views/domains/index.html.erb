@@ -4,14 +4,16 @@
 		<th> Domain ID </th>
 		<th> Domain Name </th>
 		<th> Domain Manager </th>
-		<th></th>
+		<% if current_user.is_admin? %> <th> </th><%end%>
 	</tr>
 	<% @domains.each do |domain|%>
 	<tr>
 		<td> <%= domain.id %> </td>
 		<td> <%= link_to domain.name,domain%> </td>
 		<td> <%= domain.lead_name %> </td>
-		<td> <%= link_to  "Edit",edit_domain_path(domain) %> </td>
+		<% if current_user.is_admin? || current_user.is_domain_manager?(domain) %> 
+			<td> <%= link_to  "Edit",edit_domain_path(domain) %> </td>
+		<%end%>
 	<tr>
 	<%end%>
 </table>
@@ -20,4 +22,6 @@
 <%end%>
 
 
+<br/><br/>
+<%= link_to "Add new Domain",new_domain_path%>  
 
