@@ -17,7 +17,7 @@ MadrastersForum::Application.routes.draw do
   get "workshop" => "workshop#index"
   get "workshop/:location" => "workshop#index"
   get "workshop/:location/:id" => "workshop#show"
-  get "meetup/:location/:id/edit" => "workshop#edit"
+  get "workshop/:location/:id/edit" => "workshop#edit"
 
   resources :posts do
     resources :comments
