@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
     before_action :load_location, :only => [:show,:edit,:update,:destroy]  
-
+    skip_before_filter :authenticate_user!, :only => :index
     def index
     	@locations = Location.all.order("name")
     end

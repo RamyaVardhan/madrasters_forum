@@ -1,7 +1,8 @@
 class DomainsController < ApplicationController
 	  before_action :load_domain, :only => [:show,:edit,:update,:destroy]  
-
-	def index
+	  skip_before_filter :authenticate_user!, :only => :index
+	  
+	def index	
 		@domains = Domain.all.order("name")
 	end
 

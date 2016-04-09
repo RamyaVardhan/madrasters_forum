@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 	before_action :load_metrics, :only => [:new,:edit]
     before_action :load_event, :only => [:show,:edit,:update,:destroy]  
+    skip_before_filter :authenticate_user!, :only => :index
 
     EVENT_TYPE = [
     	[1, :meetup, "Meetup"],
