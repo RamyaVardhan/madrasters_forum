@@ -1,0 +1,11 @@
+<div id="post_content">
+	<p> Name : <%= @user.name%></p> 
+	<p> Email : <%= @user.email%> </p>
+	<p> Gender : <%= @user.gender_label%> </p>
+	<p> DOB : <%= @user.dob.strftime("%d-%b-%Y") if @user.dob %> </p>
+	<p> Profession : <%= @user.profession %> </p>
+	<p> Madraster Location : <%= @user.madraster_location %> </p>
+
+<%= link_to  "Edit",edit_user_path(@user), :class => "button"%>
+<%= link_to  "Delete",user_path(@user), method: :delete, data: { confirm: "Are you sure you want to do this?" },:class => "button"%>
+

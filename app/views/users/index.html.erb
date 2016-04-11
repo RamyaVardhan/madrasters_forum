@@ -1,0 +1,14 @@
+<table border="1">
+	<tr>
+		<td>Name</td>
+		<td>Madrasters Branch</td>
+		<td> Edit</td>
+	</tr>
+	<%@users.each do |user|%>
+	<tr>
+		<td> <%= user.name %> </td>
+		<td> <%= user.madraster_location %> </td>
+		<td> <%= link_to "Edit", edit_user_path(user) %> </td>
+	</tr>
+	<%end%>
+</table>

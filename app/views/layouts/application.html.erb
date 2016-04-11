@@ -26,7 +26,6 @@
             </div>	
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            	<%if user_signed_in? %>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <%= link_to  "Location", locations_path%>
@@ -35,18 +34,28 @@
                         <%= link_to  "Domain", domains_path%>
                     </li>
                     <li>
+                        <%= link_to  "Meetup", meetup_path%>
+                    </li>
+                        <li>
+                        <%= link_to  "Workshop", workshop_path%>
+                    </li>
+                    <%if user_signed_in? %>
+                    <li>
                        <%= link_to  "Add Event", new_event_path %>
                     </li>
                     <li>
                         <%= link_to("Sign Out", destroy_user_session_path,  :method=>'delete')%>
                     </li>
+                    <%end%>
+                    
                 </ul>
-                <%else%>
+                <% if !user_signed_in? %>
                 <ul>
                 	<li><%= link_to  "Sign Up", new_user_registration_path %></li>
 					<li><%= link_to  "Sign In", new_user_session_path %></li>
 				</ul>
-				<%end%>
+                <%end%>
+                
             </div>
             <!-- /.navbar-collapse -->
         </div>

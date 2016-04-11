@@ -1,0 +1,23 @@
+<%= simple_form_for @user do |f|%>
+	<%= f.label :label, "Name" %>
+	<%= f.text_field :name %><br/>
+
+	<%= f.label :label, "Email" %>
+	<%= f.text_field :email %><br/>
+
+	<%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
+
+	<%= f.label :label, "Gender" %>
+		<%= f.select :gender, "<option value=''>...</option>".html_safe<<options_for_select(@metric[:gender],@user.gender),{}%><br/>
+
+	<%= f.label :label, "DOB" %>
+	<%= f.date_field :dob %><br/>
+
+	<%= f.label :label, "Profession" %>
+	<%= f.text_field :profession %><br/>
+
+	<%= f.label :label, "Madraster Branch" %>
+	<%= f.select :location_id, "<option value=''>...</option>".html_safe<<options_for_select(@metric[:branches],@user.location_id),{}%><br/>
+
+	<%= f.submit %>
+<%end%>
