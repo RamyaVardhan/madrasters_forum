@@ -20,7 +20,6 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(post_params)
-		debugger
 		if @user.save
 			redirect_to @user
 		else
