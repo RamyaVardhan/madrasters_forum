@@ -17,6 +17,7 @@ class EventsController < ApplicationController
 
     def new
     	@event =  Event.new()
+    	@event.event_type = EVENT_TYPE_KEY_BY_ID[params[:type]] if params[:type]
     end
 
     def create

@@ -1,6 +1,8 @@
 MadrastersForum::Application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks",
+  devise_for :users,  :path => 'auth', :controllers => { :omniauth_callbacks => "callbacks",
                                         :registrations => "users/registrations" }
+
+  resources :users
   resources :tags,:domains,:roles
 
   resources :locations do
@@ -9,12 +11,14 @@ MadrastersForum::Application.routes.draw do
 
   resources :events
   get "meetup" => "meetup#index"
+  get "meetup/new" => "meetup#new"
   get "meetup/:location" => "meetup#index"
   get "meetup/:location/:id" => "meetup#show"
   get "meetup/:location/:id/edit" => "meetup#edit"
 
 
   get "workshop" => "workshop#index"
+  get "workshop/new" => "workshop#new"
   get "workshop/:location" => "workshop#index"
   get "workshop/:location/:id" => "workshop#show"
   get "workshop/:location/:id/edit" => "workshop#edit"
@@ -27,7 +31,7 @@ MadrastersForum::Application.routes.draw do
 
   # new_change_custom_reports '/custom_reports/change/new', :controller => 'custom_reports', :action => 'new', :default => {:module_type => 'change'}
   # namespace location_based_meetup '/meetup/chennai', :controller => 'events_controller', :action => 'new'
-  root 'events#index'
+  root 'dashboard#index'
 
 
 end
