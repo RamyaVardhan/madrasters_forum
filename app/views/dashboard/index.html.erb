@@ -1,0 +1,19 @@
+<table border="1">
+	<tr>
+		<th> Name </th>
+		<th> Madraster Branch </th>
+	<tr>
+	<%@users.each do |user|%>
+	<tr>
+		<td> <%= user.name %></td>
+		<td> <%= user.location.try(:label) %></td>
+	</tr>
+	<%end%>
+</table>
+
+
+<%= link_to "Add User",users_path %><br/>
+<%= link_to "View all Locations", locations_path %><br/>
+<%= link_to "View all Domains", domains_path %><br/>
+<%= link_to "View all Events", events_path %><br/>
+<%= link_to "View all Roles", roles_path %>
